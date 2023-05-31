@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo de Site para Testes Funcionais</title>
+</head>
+
+<body>
+    <h1>Exercício prático sobre Testes Funcionais!</h1>
+
+    <form id="loginForm" action="/login" method="post">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password">
+
+        <button type="submit" id="loginButton">Entrar</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'password') {
+                document.getElementById('message').innerHTML = 'Login realizado com sucesso!';
+            } else {
+                document.getElementById('message').innerHTML = 'Nome de usuário ou senha incorretos.';
+            }
+        });
+    </script>
+</body>
+
+</html>
